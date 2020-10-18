@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "type": "node",
+            "name": "Jest Current File",
+            "request": "launch",
+            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/react-scripts",
+            "args": [
+                "test",
+                "--env=jsdom",
+                "--runInBand",
+                "--runTestsByPath",
+                "${relativeFile}"
+            ],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "protocol": "inspector",
+            "internalConsoleOptions": "neverOpen",
+            "env": {
+                "CI": "true"
+            },
+            "disableOptimisticBPs": true
+        },
+    ],
+}
