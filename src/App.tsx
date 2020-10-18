@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -19,9 +19,10 @@ const App = () => {
   };
 
   return (
-    <Container onMouseMove={handleMouseMove}>
-      <p>Hello world!</p>
-      <Coords>{coords.x}x{coords.y}</Coords>
+    <Container role="main" onMouseMove={handleMouseMove}>
+      <Coords>
+        {coords.x}x{coords.y}
+      </Coords>
     </Container>
   );
 };
