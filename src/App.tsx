@@ -1,28 +1,22 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React from 'react';
+import styled, { createGlobalStyle } from 'styled-components';
+import { MarkerEditableTooltipContainer } from './components/marker-editable-tooltip-container';
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+  }
+`;
 
 const Container = styled.div`
-  width: 100vw;
   height: 100vh;
 `;
 
-const Coords = styled.div`
-  color: #aaa;
-`;
-
 const App = () => {
-  const [coords, setCoords] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (ev: React.MouseEvent) => {
-    const { pageX: x, pageY: y } = ev;
-    setCoords({ x, y });
-  };
-
   return (
-    <Container role="main" onMouseMove={handleMouseMove}>
-      <Coords>
-        {coords.x}x{coords.y}
-      </Coords>
+    <Container role="main">
+      <GlobalStyle />
+      <MarkerEditableTooltipContainer />
     </Container>
   );
 };
