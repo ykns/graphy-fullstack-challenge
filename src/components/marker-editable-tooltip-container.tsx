@@ -2,18 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { MarkerEditableTooltip } from './marker-editable-tooltip';
 import { v4 as uuid } from 'uuid';
-
-interface MarkerEditableTooltipDto {
-  id: string;
-  x: number;
-  y: number;
-  content: string | null;
-  isDeleted: boolean;
-}
+import { MarkerEditableTooltipDto } from '../api/marker-editable-tooltip-client';
 
 const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 `;
 
 interface TooltipMap {
